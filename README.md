@@ -7,4 +7,4 @@ Création de la page en 30 minutes max.
 -  :heavy_check_mark:	Respecter les standards du Web (analyse Lighthouse)
 -  :heavy_check_mark:	Have fun ! :smile:
 
-:sparkles: Lien du projet : https://princecorg.github.io/demoEPFHtml/
+:sparkles: Lien du projet : https://princecorg.github.io/ChallengeHTML/
