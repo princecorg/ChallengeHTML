@@ -7,7 +7,7 @@
 :root {
   --primary-color: #3f65f0; /* couleur de fond*/
   --secondary-color: #ffffff; /* couleur d'écriture*/
-  --title-color: rgb(143, 189, 123);
+  --title-color: #336020;
 }
 header {
   display: flex;
@@ -128,10 +128,9 @@ ul li a:hover {
 
   .logo {
     font-size: 30px;
-    color: var(--title-color);
   }
 
-  .logo span {
+  .logo span, .active {   
     color: var(--secondary-color);
   }
 
