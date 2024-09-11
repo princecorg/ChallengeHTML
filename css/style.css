@@ -2,10 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "poppins", sans-serif;
+  font-family: 'poppins', sans-serif;
 }
 :root {
-  --primary-color: #3f65f0; /* couleur d'ambiance*/
+  --primary-color: #3f65f0; /* couleur de fond*/
+  --secondary-color: #ffffff; /* couleur d'écriture*/
+  --title-color: rgb(143, 189, 123);
 }
 header {
   display: flex;
@@ -16,20 +18,21 @@ header {
 .logo {
   font-size: 40px;
   font-weight: 700;
-  color: #474d59;
 }
 .logo span {
-  color: var(--primary-color);
+  color: var(--title-color);
 }
+
+ul {
+  display: flex;
+}
+
 ul li {
-  display: inline-block;
-  position: relative;
   padding: 8px 12px;
   list-style: none;
 }
 ul li a {
   text-decoration: none;
-  color: #474d59;
   font-size: 17px;
   transition: 0.5s;
 }
@@ -37,26 +40,18 @@ ul li a:hover {
   color: var(--primary-color);
 }
 .active {
-  color: var(--primary-color);
+  color: var(--title-color);
 }
-.right .btn-1 {
+.right .btn-1, .right .btn-2  {
   background: var(--primary-color);
   padding: 8px 12px;
-  border: none;
+  border: 2px solid var(--primary-color);
   border-radius: 10px;
-  color: #fff;
+  color: var(--secondary-color);
   cursor: pointer;
 }
-.right .btn-2 {
-  background: var(--primary-color);
-  padding: 8px 12px;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-}
+
 .text {
-  color: #474d59;
   padding: 80px 80px;
 }
 .text h1 {
@@ -72,7 +67,7 @@ ul li a:hover {
 }
 .btn {
   background: var(--primary-color);
-  color: #fff;
+  color: var(--secondary-color);
   padding: 15px 30px;
   display: flex;
   margin-top: 30px;
@@ -84,25 +79,94 @@ ul li a:hover {
 .btn:hover {
   letter-spacing: 5px;
 }
-.circle {
-  position: absolute;
+.quarter-circle {
+  position: fixed;
   background: var(--primary-color);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  clip-path: circle(600px at right 700px);
+  bottom: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  border-top-left-radius: 100%;
 }
 .IMG {
   position: absolute;
-  top: 400px;
-  right: 25px;
+  bottom: 0;
+  right: 0;
 }
 .IMG img {
-  width: 100%;
+  width: 90%;
   cursor: pointer;
   transition: 0.5s;
 }
 .IMG img:hover {
-  transform: scale(0.5);
+  transform: scale(0.75);
+}
+/* -------------------- media Queries -------------------------*/
+
+@media all and (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 5% 0;
+
+  }
+
+  ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: black;    
+    margin: 5px 0;
+  }
+
+  ul li a {
+    color : var(--secondary-color);
+  }
+
+  .logo {
+    font-size: 30px;
+    color: var(--title-color);
+  }
+
+  .logo span {
+    color: var(--secondary-color);
+  }
+
+  .quarter-circle {
+    position: unset;
+    width: 300px;
+    height: 300px;
+    float: right;
+  }
+
+  .IMG {
+    position: relative;
+    top: 60px;
+    left: 20px;
+  }
+
+  .right {
+    width: 100%;
+    text-align: center;
+  }
+  .right .btn-1, .right .btn-2  {    
+    border: 2px solid var(--secondary-color);
+    width: 160px; 
+    margin : 5px;   
+  }
+
+  .text {
+    padding: 5px;
+  }
+  .text h1 {
+    font-size: 20px;
+  }
+  
+  .text p {
+    width: 90%; 
+    max-width: unset;  
+  }
 }
